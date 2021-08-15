@@ -1,0 +1,32 @@
+//JaeHyeon Nam
+//Spring 2020
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  
+   
+   if(keyIsPressed == true){
+   background('white');
+     
+   }
+   else
+   {
+    background('red'); 
+   }
+   if(mouseIsPressed == true){
+    ellipse(30,30,30,50); 
+   }
+  else if(keyIsPressed == true){
+    rect(160,100,95,155);
+    }
+  else{
+    
+triangle(30, 75, 58, 20, 86, 75);
+
+}   
+fill('blue');
+textSize(42);
+text('JaeHyeon Nam', 50, 300); 
+}

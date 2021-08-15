@@ -1,0 +1,39 @@
+let map = [];
+let squareSize = 50;
+
+function setup() {
+  createCanvas(600, 600);
+  rectMode(CENTER);
+  map[0] = [{
+    x: width / 2,
+    y: height / 2 - squareSize
+  }];
+  map[1] = [{
+    x: width / 2,
+    y: height / 2
+  }];
+  map[2] = [{
+    x: width / 2,
+    y: height / 2 + squareSize
+  }];
+}
+
+function draw() {
+  background(220);
+  for (let m of map) {
+    for (let i of m)
+      square(i.x, i.y, squareSize);
+    let end = m.length - 1;
+    if (m[end].x < width) {
+      m.push({
+        x: m[end].x + 50,
+        y: m[end].y
+      });
+    }
+    if (m[0].x < -squareSize / 2) {
+      m.splice(0, 1);
+    }
+    for (let i of m)
+      i.x-=5;
+  }
+}

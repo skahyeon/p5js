@@ -1,0 +1,81 @@
+//JaeHyeon Nam
+//Spring 2020
+function setup() {
+  createCanvas(350, 350);
+}//Friday, April 3, 2018.
+
+function draw() {
+  background(220);
+  
+let current_date = new Date();
+let nDay = current_date.getDay();
+let nMonth =current_date.getMonth();
+let nDate = current_date.getDate();
+let nFullYear = current_date.getFullYear();
+  textSize(13);
+  text(nDate,170,150);
+  text(",",185,150);
+  text(nFullYear,195,150);
+    switch(nDay){
+      case 0 :
+      text('Sunday,',97,150);
+       break;
+      case 1 :
+      text('Monday,',97,150);
+       break;
+      case 2 :
+      text("Tuesday,",97,150);
+       break;
+      case 3 :
+      text("Wednesday,",97,150);
+       break;
+      case 4 :
+      text("Thursday,",97,150);
+       break;
+      case 5 :
+      text("Friday,",97,150);
+      break;
+      case 6 :
+      text("Saturday,",97,150);
+      break;     
+  }
+   switch(nMonth){
+      case 0 :
+      text('January',140,150);
+       break;
+      case 1 :
+      text('February',140,150);
+       break;
+      case 2 :
+      text("March",140,150);
+       break;
+      case 3 :
+      text("April",140,150);
+       break;
+      case 4 :
+      text("May",140,150);
+       break;
+      case 5 :
+      text("June",140,150);
+      break;
+      case 6 :
+      text("July",140,150);
+      break;
+      case 7 :
+      text('August',140,150);
+       break;
+      case 8 :
+      text('September',140,150);
+       break;
+      case 9 :
+      text("October",140,150);
+       break;
+      case 10 :
+      text("November",140,150);
+       break;
+      case 11 :
+      text("December",140,150);
+       break;
+        
+  }
+}

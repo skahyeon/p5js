@@ -1,0 +1,63 @@
+//JaeHyeon Nam
+//Spring 2020
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background('#417D54');
+  
+  //ear
+  noStroke();
+  fill('black');
+  ellipse(130, 128, 55, 75);
+  ellipse(270, 128, 55, 75);
+  //body
+  ellipse(205,355,155,175);
+  //head
+  strokeWeight(4);
+  stroke(51);
+  fill('white');
+  circle(200, 200, 200);
+  fill('black');
+  ellipse(150, 178, 55, 75);
+  ellipse(250, 178, 55, 75);
+  //eye
+  fill(260);
+  circle(155, 180, 30);
+  circle(245, 180, 30);
+  fill('black');
+  circle(155, 180, 10);
+  circle(245, 180, 10);
+  //mouse
+  strokeWeight(4);
+  stroke(51);
+  noFill();
+  strokeWeight(7.0);
+  strokeJoin(BEVEL);
+  beginShape();
+  vertex(177, 270);
+  vertex(203, 255);
+  vertex(229, 270);
+  endShape();
+  strokeWeight(7.0);
+  strokeCap(ROUND);
+  line(202, 223, 202, 253);
+  //nose
+  noStroke();
+  fill('black');
+  rect(190, 210, 25, 25, 10);
+  //body
+  fill('white');
+  ellipse(205, 355, 85, 105);
+  //grass
+  fill('#7EA76A');
+  triangle(21, 400, 12, 334, 60, 400);
+  triangle(286, 400, 335, 296, 320, 400);
+  triangle(60, 400, 80, 312, 105, 400);
+  triangle(320, 400, 373, 346, 369,400);
+  //a panda house
+  stroke('black');
+  noFill();
+  rect(10, 20, 380, 390); 
+}

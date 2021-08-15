@@ -1,0 +1,50 @@
+//Jaehyeon Nam
+//2020 Spring
+let bubbles = [];
+function setup() {
+  createCanvas(400, 400);
+  for(let i=0; i<3; i++){
+   let x = 10 +30 *i
+   bubbles[i] = new Bubble(x,200,40);
+  }
+}
+
+function draw() {
+  background('green');
+  for(let i =0; i<bubbles.length; i++){
+    bubbles[i].move();
+    bubbles[i].show();
+    push()
+    fill('blue')
+    rect(0,280,400,120);
+    pop()
+    line(width/2,70,width/2,height);
+    line(240,0,240,275);
+    line(width/2,70,240,0);
+    line(width/2,400,240,275);
+  }
+}
+
+class Bubble {
+  constructor(x,y,r){
+    this.x = x;
+    this.y=y;
+    this.r=r; 
+    this.firstX=x;
+    
+  }
+  move(){
+  
+   this.y=random(170,250);
+   this.x =this.firstX+map(noise(frameCount/50),0,1,-25,25)
+  
+}
+    show(){
+    stroke(255);
+    strokeWeight(4);
+    noFill()
+    
+    
+    ellipse(this.x,this.y,this.r*1.5);
+  }
+}

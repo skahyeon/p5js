@@ -1,0 +1,26 @@
+//JaeHyeon Nam
+//Spring 2020
+var i = 0;
+var j = 0;
+
+function setup() {
+  createCanvas(550, 300);
+}
+
+function draw() {
+  background(75);
+  for(i = 0; i<width; i++){//noprotect
+   for(j = 0; j<height; j++){
+     
+     var x = i*50;
+     var y = j * 50;
+     stroke('#222222');
+     fill(255);
+     line(x,0,x,height);
+     line(0,y,width,y);
+     text(x,x+25,25);
+     text(y,25,y+25);
+   }
+    
+  }
+}

@@ -1,0 +1,65 @@
+//JaeHyeon Nam
+//Spring 2020
+let grade;
+
+
+function setup() {
+  createCanvas(300, 300);
+  grade = random(100);
+  textSize(75);
+}
+
+function draw() {
+  frameRate(30);
+  background(220);
+    if(mouseIsPressed)
+  {
+    grade = random(100);
+  }
+   grade = round(grade);
+     
+  
+  if(97<=grade)
+  {
+    text('A+',100,200);
+  } else if(93<=grade&&grade<=96)
+  {
+     text('A',100,200);
+  }  else if(90<=grade&&grade<=92)
+  {
+     text('A-',100,200);
+  } else if(87<=grade&&grade<=89)
+  {
+     text('B+',100,200);
+  } else if(83<=grade&&grade<=86)
+  {
+     text('B',100,200);
+  } else if(80<=grade&&grade<=82)
+  {
+     text('B-',100,200);
+  } else if(77<=grade&&grade<=79)
+  {
+     text('C+',100,200);
+  } else if(73<=grade&&grade<=76)
+  {
+     text('C',100,200);
+  } else if(70<=grade&&grade<=72)
+  {
+     text('C-',100,200);
+  } else if(69>=grade&&grade>=67)
+  {
+     text('D+',100,200);
+  } else if(66>=grade&&grade>=63)
+  {
+     text('D',100,200);
+  } else if(62>=grade&&grade>=60)
+  {
+    text('D-',100,200);
+  } else
+  {
+   text('F',100,200);
+  }
+  text(grade,100,100);
+  
+  
+}

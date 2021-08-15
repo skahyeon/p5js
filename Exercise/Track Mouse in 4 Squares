@@ -1,0 +1,28 @@
+//JaeHyeon Nam
+//Spring 2020
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+
+  let w = width/2
+  let h = height/2
+  
+  background(220);
+  square(0,0, 200)
+  square(200,0,200)
+  square(0, 200, 200)
+  square(200, 200, 200)
+
+  if (mouseX <= w && mouseY<=h) {
+    circle(100, 100,30);
+  } else if (mouseX >= w && mouseY <=200) {
+    circle(300, 100, 40);
+  }else if(mouseX<=w && mouseY >= h){
+  circle(100, 300, 50)
+  } else if(mouseX>=w && mouseY>= h){
+    circle(300, 300, 60) 
+  }
+}

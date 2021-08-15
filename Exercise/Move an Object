@@ -1,0 +1,48 @@
+//JaeHyeon Nam
+//Spring 2020
+let x = 0;
+let y = 0;
+let goLeft = false;
+var size = 0;
+var strokesize = 0;
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  fill(255,100,150);
+  strokeWeight(strokesize);
+  strokesize = (strokesize +1)%10;
+  size = (size +1)%70;
+   circle(x,y,50);
+  if(goLeft == false){
+    x=(x+1);
+  }
+  if(goLeft==true){
+    x=(x-1);
+  }
+  if(x>width)
+  {
+  goLeft = true;
+  }
+  if(x<0)
+  {
+  goLeft = false;
+  }
+  if(goLeft == false){
+    y=(y+1);
+  }
+  if(goLeft==true){
+    y=(y-1);
+  if(y>height)
+  {
+  goLeft = true;
+  }
+  if(y<0)
+  {
+  goLeft = false;
+  }
+  
+}
+}

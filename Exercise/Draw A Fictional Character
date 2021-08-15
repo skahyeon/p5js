@@ -1,0 +1,59 @@
+/*
+JaeHyeon Nam
+Spring 2020
+*/
+function setup() {
+  createCanvas(600, 600);
+}
+
+function draw() {
+  background(220);
+  stroke('black'); 
+  strokeWeight(3);
+  // Spider Man head
+  fill('red');
+  ellipse(265, 150, 175, 175);
+  //Spider Man eye
+  fill('white');
+  arc(230, 150, 80, 80, 20,35, CHORD);
+  arc(300, 150, 80, 80, 0,15, CHORD);
+  //Spider Man body
+  fill('blue');
+  quad(280, 340, 220, 365, 280, 400, 340, 365);
+  quad( 230, 365, 270, 395, 260,  500, 230, 485);
+  quad(330, 365, 290, 395, 300, 500, 330, 485);
+  fill('red');
+  rect(220, 230, 120, 140);
+  fill('red');
+  triangle(340, 290, 440, 181, 340, 240);
+  triangle(220, 290, 140, 340, 220, 240);
+  triangle(228, 483, 260, 500, 216, 504);
+  triangle(329, 483, 298, 500, 344, 505);
+  line(453,0,445,170);
+  circle(130, 350, 40);
+  fill('red');
+  square(425, 155, 35, 20);
+  fill('blue');
+  triangle(220, 230, 255, 300, 220, 367);
+  triangle(340, 230, 305, 300, 340, 367);
+  //Obstacle
+  fill(255,94,0);
+  triangle(0, 600, 32, 571, 50, 600);
+  triangle(50, 600, 82, 571, 100, 600);
+  triangle(100, 600, 132, 571, 150, 600);
+  triangle(150, 600, 182, 571, 200, 600);
+  triangle(200, 600, 232, 571, 250, 600);
+  triangle(250, 600, 282, 571, 300, 600);
+  triangle(300, 600, 332, 571, 350, 600);
+  triangle(350, 600, 382, 571, 400, 600);
+  triangle(400, 600, 432, 571, 450, 600);
+  //snow
+  stroke('white'); 
+  strokeWeight(15);
+  point(400, 270);
+  point(485, 185);
+  point(160, 200);
+  point(61, 255);
+  point(100,50);
+
+}

@@ -1,0 +1,46 @@
+
+  // spring 2020
+
+function setup() {
+  createCanvas(800, 400);
+}
+
+function draw() {
+  background(220);
+  
+  var x = 100;
+  var y = 220;
+  var b = 20;
+  
+  for(let apple_tree = 0; apple_tree<4; apple_tree++){
+  
+  fill('Brown');
+  rect(x, y, 60, 180);
+    
+    var l = x-10;
+    for(let leaves = 0; leaves<3; leaves++) {
+    push();
+    noStroke();
+    fill('Green');
+    if(leaves == 1){
+    circle(l, y-80, 100);}
+    else circle(l, y-20, 100);
+    l+=40;
+    pop();
+      
+      var a = x-5;
+      for(let apple = 0; apple<3; apple++) {
+      fill('Red');
+      if(apple == 1){
+      circle(a, y-80, b);}
+      else circle(a, y-20, b);
+      a+=40;
+      }
+    
+    }
+    
+    x+=180;
+    
+    
+  }
+}

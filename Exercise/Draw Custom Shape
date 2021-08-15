@@ -1,0 +1,43 @@
+//JaeHyeon Nam
+//Spring 2020
+function setup() {
+  createCanvas(500, 400);
+}
+
+function draw() {
+  background('black');
+  
+  
+  const x1 = width / 2;
+  const y1 = height / 2;
+  beginShape();
+  
+  for(let angle = 0; angle < HALF_PI; angle += random(PI / 30, PI / 6))
+  {
+    
+    const radius = random(width/5, height / 5);
+    let x = x1 + cos(angle) * radius;
+    let y = y1 + sin(angle) * radius;
+    vertex(x,y);
+  }
+  endShape(CLOSE);
+  
+  fill('blue');
+  stroke('yellow');
+  beginShape();
+  let angle = 0;
+  while(angle < TWO_PI)
+  {
+    const radius = random(width/4, height/4);
+    let x = x1 + cos(angle)*190
+    let y = y1 + sin(angle)*190
+    vertex(x,y);
+    
+    angle += random(2500);
+  }
+  endShape(CLOSE);
+  
+ 
+  
+  
+}

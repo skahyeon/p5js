@@ -1,0 +1,48 @@
+//JaeHyeon Nam
+//Spring 2020
+function setup() {
+  createCanvas(400, 400);
+}
+function draw() {
+  background(220);
+   stroke('black');
+  fill(204,114,61);
+  square(200, 200, 350, 10, 10, 10, 10);
+  //Pizza Box
+  rectMode(CENTER);
+  fill(242, 204, 92);
+  stroke('brown');
+  arc(200, 200, 300, 300, 0, PI + QUARTER_PI, PIE);
+  //Pizza dough
+  fill(255,0 ,0);
+  ellipse(100, 150, 55, 55);
+  ellipse(100, 230, 55, 55);
+  ellipse(160, 270, 55, 55);
+  //Pepperoni
+  fill(153,56,0);
+  circle(269, 269, 20);
+  circle(273, 303, 20);
+  circle(313, 252, 20);
+  //Bulgogi
+  fill(255,228,0);
+  rect(148, 206, 30, 30);
+  rect(189, 326, 30, 30);
+  rect(237, 248, 30, 30);
+  //Pineapple.
+  line(189, 350, 200, 200);
+  stroke('black'); 
+  strokeWeight(2); 
+  point(259, 240);
+  point(281, 280);
+  point(133, 231);
+  point(80, 264);
+  stroke('brown');
+  //Pepper Powder
+  fill('white');
+  quad(273,303, 250, 291, 233, 295, 240, 313);
+  quad(98,297, 116, 276, 133, 302, 127, 328);
+  //Cheese
+  triangle(196, 206, 222, 69, 262, 97);
+  //Knife
+}
+

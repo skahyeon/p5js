@@ -1,0 +1,42 @@
+/*
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  let length = 50;
+  let x = width / 2;
+  let y = height / 2;
+  let angle = atan2(mouseY - y, mouseX - x);
+  let endx = x + cos(angle) * length;
+  let endy = y + sin(angle) * length;
+  line(x, y, endx, endy);
+}
+*/
+let x = 0;
+let y = 0;
+let angle = 0;
+let size = 90;
+function setup() {
+  createCanvas(400, 400);
+  x = width / 2;
+}
+
+function draw() {
+  background('#00D8FF');
+  outlineWeight = map(mouseX,0,width-1,30,2);
+  strokeWeight(outlineWeight);
+  stroke('red');
+  //y = height/2 + sin(angle) * 100;
+  x= width/2 + sin(angle) * 100;
+  y = height/2 + sin(millis() / 300) * 100;
+  size = map(cos(frameCount / 50), -1,1,30,120);
+  fill('yellow');
+  circle(x,y,size);
+  angle += PI/3 * deltaTime / 1000;
+  x++;
+  x+=10;
+  //angle += 0.01;
+ // angle += PI/3 * deltaTime / 1000;
+}

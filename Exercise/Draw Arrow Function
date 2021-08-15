@@ -1,0 +1,81 @@
+//JaeHyeon Nam
+//Spring 2020
+
+var arr = [];
+var a=125;
+var b=140;
+function setup() {
+  createCanvas(500, 500);
+  for(var i=1; i<4; i++){
+   for(var j=2; j<3; j++){
+    arr.push(new Arrow(random(a)*i,random(b)*j,15)); 
+   }
+  }
+  interval=setInterval(switch2,5000);
+  }
+function switch2(){
+  
+      for(var i=1; i<4; i++){
+   for(var j=2; j<3; j++){
+    arr.push(new Arrow(random(0,160)*i,random(0,200)*j,15)); 
+   }
+  }          
+return 0;
+  function setup(resetSketch){
+    
+  }
+}
+var me = {
+ "age" : 20
+  
+}
+var human =[
+    {
+      "age" : me.age
+    },
+    {
+      "age" : 49 
+    }
+  ]
+var humanNested ={
+    "me":{
+      "age" : me.age
+    },
+    "human":{
+      "age" : 49 
+    }
+}
+console.log(me.age)
+console.log(human[0].age)
+console.log(human[1].age)
+console.log(humanNested.me.age)
+console.log(humanNested.human.age)
+
+function draw() {
+  background('yellow');
+  fill('red');
+  for(var k=0; k<arr.length; k++)
+  arr[k].update();
+  }
+
+function Arrow(x,y,length){
+  //this.x = x;
+  //this.y=y;
+  //this.length=length;
+  this.update=function(){
+  var angle = atan2(mouseY-y,mouseX-x);
+  push();
+  translate(x,y);
+  rotate(angle);
+  beginShape();
+  vertex(0,-length);
+  vertex(2*length,-length);
+  vertex(2*length, -2*length);
+  vertex(4*length,0);
+  vertex(2*length,2*length);
+  vertex(2*length,length);
+  vertex(0,length);
+  endShape(CLOSE); 
+  pop();
+  }
+}

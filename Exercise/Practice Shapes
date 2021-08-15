@@ -1,0 +1,56 @@
+/*
+ Dong-A Choi & Jae-Hyeon Nam
+ practice shapes assignment in a group
+*/
+
+function setup() {
+  createCanvas(1000, 1000);
+}
+
+function draw() {
+  fill('white')
+  //face
+  ellipse(300, 150, 170, 220)
+  //eyes
+  push()
+  ellipseMode(RADIUS)
+  fill('white')
+  circle(250,100,20)
+  ellipseMode(CENTER)
+  fill('black')
+  circle(250,100,10)
+  fill('white')
+  ellipseMode(RADIUS)
+  fill('white')
+  circle(350,100,20)
+  ellipseMode(CENTER)
+  fill('black')
+  circle(350,100,10)
+  fill('white')
+  pop()
+  //nose
+  fill(250,244,192);
+  quad(301,135,276,170,301,185,326,170)
+  fill('white')
+  
+  //ear
+  push()
+  ellipseMode(RADIUS)
+  arc(377,140,50,50,PI+HALF_PI, HALF_PI)  
+  ellipseMode(CENTER)
+  arc(377,140,70,70,PI+HALF_PI, HALF_PI)
+  ellipseMode(RADIUS)
+  arc(223,140,50,50,HALF_PI, PI+HALF_PI)  
+  ellipseMode(CENTER)
+  arc(223,140,70,70,HALF_PI, PI+HALF_PI)
+  pop()
+  
+  //mouth
+  fill('red')
+  rect(285,210,35,25,20)
+  fill('white')
+  //hair
+  line(240,30,260,50)
+  line(350,30,330,50)
+  line(299,20,300,40)
+}

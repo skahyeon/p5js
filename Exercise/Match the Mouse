@@ -1,0 +1,13 @@
+//JaeHyeon Nam
+//Spring 2020
+function setup() {
+  createCanvas(500,500);
+  frameRate(10);
+}
+
+function draw() {
+  background('#00D8FF');
+  fill(255,0,0,30);
+  circle(mouseX, mouseY, 50);
+  circle(pmouseX, pmouseY, 50);
+}

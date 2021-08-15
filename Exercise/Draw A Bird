@@ -1,0 +1,51 @@
+//JaeHyeon Nam
+//Spring 2020
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background('#71A22A');
+  //grass
+  fill('green');
+  triangle(19, 400, 60, 400, 34, 235);
+  triangle(60, 400, 111, 400, 90, 238);
+  triangle(277, 400, 323, 400, 356, 260);
+  triangle(293,265, 323, 400, 360,400);
+  //wood
+  fill('brown');
+  quad(0, 352, 0, 385, 269, 93, 251, 71);
+  //egg
+  fill('white');
+  ellipse(35, 375, 35, 55);
+  ellipse(75, 375, 35, 55);
+  ellipse(365,375, 35, 55);
+  //body
+  noStroke();
+  fill('#C29E61');
+  triangle(180, 105, 220, 105, 210, 65);
+  circle(200, 200, 200);
+  ellipse(205,355,155,175);
+  ellipse(130, 330, 85, 45);
+  ellipse(280, 330, 85, 45);
+  fill(213,213,213);
+  ellipse(205, 355, 85, 105);
+  strokeWeight(0.5);
+  stroke(51);
+  fill('#F0B50A');
+  triangle(200, 220, 175, 240, 225, 240);
+  triangle(200, 263, 175, 240, 225, 240);
+  //eye
+  fill('white');
+  circle(155, 180, 30);
+  circle(245, 180, 30);
+  fill('black');
+  circle(160, 180, 20);
+  circle(240, 180, 20);
+  //bird house
+  strokeWeight(3);
+  stroke('black');
+  noFill();
+  rect(10, 20, 380, 390);
+}

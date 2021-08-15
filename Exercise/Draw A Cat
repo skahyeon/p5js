@@ -1,0 +1,30 @@
+//JaeHyeon Nam
+//Spring 2020
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  fill(224,185,79);
+  ellipse(199,344,120,150);
+  noStroke();
+  fill(224,185,79);
+  triangle(122, 155, 168, 133, 122, 102);
+  triangle(272, 155, 228, 133, 280, 102);
+  stroke('black');
+  strokeWeight(0.5);
+  circle(200, 200, 180);
+  fill('white');
+  circle(160, 175, 40);
+  circle(240, 175, 40);
+  fill('black');
+  ellipse(160, 175, 7,25);
+  ellipse(240,175,7,25);
+  fill('black');
+  rect(190,190,25,25,10);
+  fill('red');
+  arc(200, 240, 20, 60, 0, PI + QUARTER_PI, CHORD);
+  noFill();
+  rect(10, 20, 380, 390); 
+}

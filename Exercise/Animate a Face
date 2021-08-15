@@ -1,0 +1,70 @@
+//JaeHyeon Nam
+//Spring 2020
+var hair = 0;
+var mouseY = 0;
+var a = 0;
+var mouth = 20;
+var mouth1 = 30;
+function setup() {
+  createCanvas(400, 400);
+
+}
+
+function draw() {
+    background(220);
+  
+  fill('White');
+  let ear=map(mouseY,10,400,170,190);
+  ellipse(100,ear,70,90)
+  ellipse(300,ear,70,90)
+  ellipse(100,ear,40,60)
+  ellipse(300,ear,40,60)
+  //ear
+  ellipse(200,200,200,230);
+  //eye
+   push()
+    hair += 3;
+  if(a<40)
+    a=a+0.5;
+  else
+    a--;
+  stroke(0,hair);
+  strokeWeight(a);
+  line(120,170,120,140);
+  line(130,170,130,127);
+   line(140,170,140,122);
+  line(150,170,150,113);
+   line(160,170,160,109);
+    line(170,170,170,104);
+   line(180,170,180,101);
+  line(190,170,190,100);
+   line(200,170,200,99);
+     line(210,170,210,100);
+   line(220,170,220,101);
+  line(230,170,230,104);
+   line(240,170,240,109);
+  line(250,170,250,113);
+   line(260,170,260,122);
+   line(270,170,270,127);
+   line(280,170,280,140);
+  pop()
+  //hair
+   fill('White');
+   circle(150,190,50);
+   circle(250,190,50);
+  fill('black');
+    circle(150,ear,20);
+  circle(250,ear,20);
+  if(mouth<40)
+    mouth = mouth+0.1;
+  else
+    mouth--;
+  if(mouth1<60)
+    mouth1 = mouth1+0.2;
+  else
+    mouth1--;
+  fill('red')
+ellipse(200,260,mouth,mouth1);
+//mouth
+ 
+}
