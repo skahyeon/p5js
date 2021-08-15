@@ -1,0 +1,98 @@
+//JaeHyeon Nam
+//Spring 2020
+var page = 'home';
+
+var button = function(x,y,w,h,pageSwitch,txt,txtSize)
+{
+fill(255,0,0);
+  if(mouseX > x && mouseX <x+w && mouseY > y && mouseY < y+h)
+  {
+   fill(0,51,255);
+   if(mouseIsPressed)
+   {
+     page = pageSwitch;
+   }  
+   
+  }  
+  rect(x,y,w,h);
+  textSize(txtSize);
+  fill(0,0,0);
+  text(txt,x+w/2,y+h/2);
+}
+draw = function(){
+  createCanvas(500,500);
+  background(255,255,255);
+  textAlign(CENTER,CENTER);
+  switch(page)
+  {
+    case "home":
+      background('#FAED7D');
+      button(260,253,130,65, "soldier", "Soldier", 26);
+      button(110,253,130,65,"healer", "Healer", 26);
+      textSize(19);
+      text("Korea has been invaded now.",190,100);
+      text("So you have to choose one of the two jobs",250,130);
+      text("and devote yourself to your country.",220,160);
+      text("What action will you take?",178,193);
+      break;
+      case"healer":
+      background('#FAED7D');
+      button(260,320,130,65,"2", "soldier",26);
+      button(110,320,130,65,"1", "child",26);
+      textSize(16);
+      text("You're a healer now..",190,100);
+      text("You have to save one of them.",225,135);
+      text("Who would you like to choose?",230,170);
+      break;
+      case"soldier":
+      background('#FAED7D');
+      button(260,320,130,65,"4", "Retreat",26);
+      button(110,320,130,65,"3", "Fight",26);
+      textSize(16);
+      text("You are a soldier on the battlefield now.",220,100);
+      text("What action will you take?",170,150);
+      break;
+      case"1": // child
+      background('#3DB7CC');
+      
+      button(380,380,50,50,"home","BACK",14);
+      textSize(38);
+      text("You lose",180,100);
+      textSize(18);
+      text("You are a hero who saved a young life.",240,230);
+      text("But you lose the war and became a slave.",250,320);
+      break;
+      case"2": // soldier
+      background('#A566FF');
+     
+      button(380,380,50,50,"home","BACK",14);
+      textSize(38);
+      text("You Win",180,100);
+      textSize(18);
+      text("You are the hero who saved the country.",240,230);
+      text("But many young lives have passed away.",240,320);
+      break;
+      
+      case"3": // fight
+      background('#CCA63D');
+      button(380,380,50,50,"home","BACK",14);
+      textSize(25);
+      text("You are live",240,200);
+      textSize(15);
+      text("The rescue team has arrived.",240,245);
+      text("and you have kept your honor as a soldier.",240,290);
+      break;
+      case"4":  //retreat
+      background('green');
+      
+      button(380,380,50,50,"home","BACK",14);
+      textSize(25);
+      text("You are die.",240,200);
+      textSize(15);
+      text("You were shot in retreat",240,245);
+      text("and you have lost your honor as a soldier.",240,290);
+      break;
+      
+  };
+  
+}

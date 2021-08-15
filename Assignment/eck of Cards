@@ -1,0 +1,103 @@
+//JaeHyeon Nam
+//Spring 2020
+function setup() {
+  createCanvas(850, 400);
+}
+
+function draw() {
+  background(220);
+  rectMode(CENTER);
+  textSize(18);
+  var shape = 0;
+  var k = 1;
+  let x = 33;
+  let y = 42;
+  for(let card = 0; card <4; card +=1){
+    for(let card1 = 0; card1 <13; card1 +=1){
+      rect(x,y,55,65);
+      switch(card1){
+        case 0 : text('A',x-24,y-18);
+          break;
+          case 1 : text('2',x-24,y-18);
+          break
+          case 2 : text('3',x-24,y-18);
+          break
+          case 3 : text('4',x-24,y-18);
+          break
+          case 4 : text('5',x-24,y-18);
+          break
+          case 5 : text('6',x-24,y-18);
+          break
+          case 6 : text('7',x-24,y-18);
+          break
+          case 7 : text('8',x-24,y-18);
+          break
+          case 8 : text('9',x-24,y-18);
+          break
+          case 9 : text('10',x-24,y-18);
+          break
+          case 10 : text('J',x-24,y-18);
+          break
+          case 11 : text('Q',x-24,y-18);
+          break
+          case 12 : text('K',x-24,y-18);
+          break
+      }
+          x+=65;
+      }
+     y+=85;
+      x-=845;
+    }
+   for(let j = 0; j<=3; j++){
+    for(let i = 0; i<=12; i++){
+      
+      switch(shape){
+        case 0 :
+          push();
+          noStroke();
+          fill("blue");
+          circle(i*65+22, j*85+40, 25);
+          circle(i*65+42, j*85+40, 25);
+          quad(i*65+12, j*85+47, i*65+32, j*85+38, i*65+52, j*85+47, i*65+32, j*85+70);
+          pop();
+          shape++;
+          break;
+        case 1 :
+          push();
+          noStroke();
+          fill("red");
+          circle(i*65+22, j*85+50, 25);
+          circle(i*65+42, j*85+50, 25);
+          quad(i*65+12, j*85+43, i*65+32, j*85+52, i*65+52, j*85+43, i*65+32, j*85+20);
+          triangle(i*65+32, j*85+50, i*65+22, j*85+75, i*65+42, j*85+75);
+          pop();
+          shape++;
+          break;
+        case 2 :
+          push();
+          beginShape();
+          noStroke();
+          fill("#FFBB00");
+          vertex(i*65+32, j*85+15);
+          vertex(i*65+12, j*85+45);
+          vertex(i*65+32, j*85+75);
+          vertex(i*65+52, j*85+45);
+          endShape(CLOSE);
+          pop();
+          shape++;
+          break;
+        case 3 :
+          push();
+          fill('green');
+          noStroke();
+          circle(i*65+20, j*85+50, 25);
+          circle(i*65+44, j*85+50, 25);
+          circle(i*65+32, j*85+30, 25);
+          triangle(i*65+32, j*85+30, i*65+22, j*85+75, i*65+42, j*85+75);
+          pop();
+          shape = 0;
+          break;
+      }
+    }
+   }
+}
