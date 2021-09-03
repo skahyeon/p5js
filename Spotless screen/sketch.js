@@ -1,0 +1,87 @@
+let bGLine = [];
+let bGOffSet = 0;
+let offSet = 20;
+let blockArray = [];
+let rows = 4;
+
+function setup() {
+  createCanvas(400, 400);
+  for (let i = 0; i < width; i++) {
+    bGLine[i] = color(random(255));
+  }
+
+  for (let i = 0; i < rows; i++) {
+    blockArray[i] = [];
+    blockArray[i][0] = new block(100, 300, i);
+  }
+}
+
+function draw() {
+  background(220);
+  backgroundUpdate();
+  for (let row of blockArray) {
+    for (let block of row) {
+      block.update();
+      block.display();
+    }
+  }
+
+  let lastBlock = blockArray[0][blockArray[0].length - 1];
+  if (lastBlock.x + lastBlock.bLength < 300) {
+    newBlock(lastBlock);
+  }
+  let firstBlock = blockArray[0][0];
+  if (firstBlock.x + firstBlock.bLength < 0) {
+    for(let i=0;i<rows;i++) {
+      blockArray[i].splice(0, 1);
+    }
+  }
+}
+
+function newBlock(lB) {
+  let currentHeight = lB.y;
+  if (currentHeight == 400) {
+    currentHeight = random(150, 300);
+  } else if (random() < 0.2) {
+    currentHeight = 400;
+  }
+  for (let i = 0; i < rows; i++) {
+    blockArray[i].push(new block(lB.x + lB.bLength, currentHeight, i));
+  }
+}
+
+class block {
+  constructor(x, y, row) {
+    this.bLength = 100;
+    this.rowWidth = 20;
+    this.row = row;
+    this.x = x;
+    this.y = y;
+    this.bx = this.x - row * this.rowWidth;
+    this.by = this.y + row * this.rowWidth;
+    
+    this.speed=3;
+  }
+
+  update() {
+    this.bx -= this.speed;
+    this.x -= this.speed;
+  }
+
+  display() {
+    stroke(0);
+    strokeWeight(1);
+    fill(255, 200);
+    quad(this.bx, this.by, this.bx + this.bLength, this.by, this.bx + this.bLength - this.rowWidth, this.by + this.rowWidth, this.bx - this.rowWidth, this.by + this.rowWidth);
+    quad(this.bx - this.rowWidth, this.by + this.rowWidth, this.bx - this.rowWidth + this.bLength, this.by + this.rowWidth, this.bx - this.rowWidth + this.bLength, height, this.bx - this.rowWidth, height);
+    quad(this.bx + this.bLength, this.by, this.bx + this.bLength, height, this.bx + this.bLength - this.rowWidth, height, this.bx + this.bLength - this.rowWidth, this.by + this.rowWidth);
+  }
+}
+
+function backgroundUpdate() {
+  for (let i = 0; i < width; i++) {
+    stroke(bGLine[(i + bGOffSet) % width]);
+    line(i, 0, i, height);
+  }
+  bGOffSet++;
+}
